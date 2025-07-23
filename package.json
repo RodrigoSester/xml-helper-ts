@@ -30,19 +30,19 @@
     "validation"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com",
-    "url": "https://github.com/yourusername"
+    "name": "Rodrigo Weber Sesterheim",
+    "email": "rodrigows09@gmail.com",
+    "url": "https://github.com/RodrigoSester"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/xml-helper.git"
+    "url": "git+https://github.com/RodrigoSester/xml-helper-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/xml-helper/issues"
+    "url": "https://github.com/RodrigoSester/xml-helper-ts/issues"
   },
-  "homepage": "https://github.com/yourusername/xml-helper#readme",
+  "homepage": "https://github.com/RodrigoSester/xml-helper-ts#readme",
   "engines": {
     "node": ">=14.0.0"
   },
