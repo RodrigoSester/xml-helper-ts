@@ -7,12 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish:
+  publish-npm:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,12 +32,33 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          
+
+  publish-github:
+    runs-on: ubuntu-latest
+    needs: publish-npm
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: Setup Node.js for GitHub Packages
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           registry-url: 'https://npm.pkg.github.com'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build package
+        run: npm run build
+        
+      - name: Configure package for GitHub
+        run: |
+          cat package.json | jq '.name = "xml-helper-ts"' > temp.json
+          mv temp.json package.json
           
       - name: Publish to GitHub Packages
         run: npm publish
