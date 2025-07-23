@@ -1,6 +1,6 @@
 {
   "name": "xml-helper-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript library for XML parsing, validation with XSD schema, and XML/JSON conversion - built from scratch without external dependencies",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
